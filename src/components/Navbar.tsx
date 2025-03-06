@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronRight } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const links = [
@@ -37,15 +37,12 @@ const Navbar = () => {
     <nav
       className={cn(
         'fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300',
-        scrolled ? 'neo-glass' : 'bg-transparent'
+        scrolled ? 'glass backdrop-blur-md' : 'bg-transparent'
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <a 
-            href="#home" 
-            className="text-2xl font-display font-bold text-gradient animate-pulse-glow"
-          >
+          <a href="#home" className="text-2xl font-bold text-gradient">
             Nitya Rawat
           </a>
           
@@ -55,17 +52,16 @@ const Navbar = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="group relative text-white/80 hover:text-accent-blue transition-colors duration-300 font-medium"
+                className="text-engineer-800 hover:text-accent-blue transition-colors duration-300"
               >
                 {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-blue transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
           </div>
           
           {/* Mobile Navigation Toggle */}
           <button
-            className="md:hidden text-white/80 hover:text-accent-blue transition-colors focus:outline-none"
+            className="md:hidden text-engineer-800 focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle Menu"
           >
@@ -77,7 +73,7 @@ const Navbar = () => {
       {/* Mobile Navigation Menu */}
       <div
         className={cn(
-          'fixed top-[72px] left-0 right-0 h-screen neo-glass transform transition-transform duration-300 ease-in-out md:hidden',
+          'fixed top-[72px] left-0 right-0 h-screen bg-white/90 backdrop-blur-lg transform transition-transform duration-300 ease-in-out md:hidden',
           isOpen ? 'translate-x-0' : 'translate-x-full'
         )}
       >
@@ -86,10 +82,9 @@ const Navbar = () => {
             <a
               key={link.href}
               href={link.href}
-              className="flex items-center text-xl text-white/80 hover:text-accent-blue transition-colors"
+              className="text-xl text-engineer-800 hover:text-accent-blue"
               onClick={handleLinkClick}
             >
-              <ChevronRight className="h-5 w-5 mr-2 text-accent-blue" />
               {link.label}
             </a>
           ))}

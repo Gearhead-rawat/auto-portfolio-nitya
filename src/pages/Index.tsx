@@ -31,7 +31,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-dark-900">
+    <div className="min-h-screen bg-engineer-50">
       <Navbar />
       <Hero />
       <About />
@@ -39,13 +39,6 @@ const Index = () => {
       <Projects />
       <Contact />
       <Footer />
-      
-      {/* Futuristic scroll indicator */}
-      <div className="fixed bottom-10 right-10 z-40 hidden md:block">
-        <div className="h-20 w-1 bg-dark-600 rounded-full mx-auto overflow-hidden">
-          <div className="h-6 w-full bg-accent-blue rounded-full animate-bounce"></div>
-        </div>
-      </div>
     </div>
   );
 };

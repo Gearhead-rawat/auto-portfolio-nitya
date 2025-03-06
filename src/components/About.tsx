@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Section from './Section';
-import { CheckCircle, Award, BookOpen, Ruler, Compass, Cpu } from 'lucide-react';
+import { CheckCircle, Award, BookOpen } from 'lucide-react';
 
 const About = () => {
   const achievements = [
@@ -11,103 +11,53 @@ const About = () => {
   ];
 
   return (
-    <Section id="about" variant="gradient">
+    <Section id="about" className="bg-white">
       <div className="flex flex-col lg:flex-row items-center gap-12">
         <div className="w-full lg:w-2/5">
           <div className="relative max-w-md mx-auto lg:mx-0 reveal">
-            <div className="relative z-10 rounded-lg overflow-hidden shadow-xl futuristic-border">
+            <div className="relative z-10 rounded-lg overflow-hidden shadow-xl">
               <div className="aspect-w-4 aspect-h-5 blur-load" style={{ backgroundImage: 'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAMCAYAAABbayygAAAAn0lEQVR42mP4DwQMQMwIxExAzALEbEDMDsQcQMwJxFxAzA3EPEDMiwAQ41xA+Wsg/g/E/4D4LxD/AOLvQPwFiD8B8Qcgfg/Eb4H4NRC/AOJnQPwEBIDie4H4LhDfBuKbQHwNiC8D8QUgHoQqPArER4B4PxDvBeIpQNwFxO1A3ALEjUBcC8TVQFwG+hMEyoG4FIiLgbgQiPOAOBeIswAJSS9uXR+kZwAAAABJRU5ErkJggg==)' }}>
                 <img 
-                  src="https://images.unsplash.com/photo-1581092160607-ee22621ee195?q=80&w=1170&auto=format&fit=crop" 
-                  alt="Nitya Rawat - Automotive Engineer" 
+                  src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b" 
+                  alt="Nitya Rawat - Automobile Engineer" 
                   className="w-full h-full object-cover"
                   loading="lazy"
                   onLoad={(e) => e.currentTarget.parentElement?.classList.add('loaded')}
                 />
               </div>
-              
-              {/* High-tech overlay elements */}
-              <div className="absolute top-4 left-4 flex items-center space-x-2">
-                <div className="h-2 w-2 rounded-full bg-accent-blue animate-pulse"></div>
-                <div className="text-xs font-mono text-white">ID.8721</div>
-              </div>
-              
-              <div className="absolute bottom-4 right-4">
-                <div className="text-xs font-mono text-accent-blue">
-                  <span className="text-white">LAT:</span> 37.7749 <span className="text-white">LONG:</span> -122.4194
-                </div>
-              </div>
             </div>
             
             {/* Decorative elements */}
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-accent-blue/10 rounded-full -z-10 animate-pulse"></div>
-            
-            {/* Tech measurements */}
-            <div className="absolute -left-6 top-1/2 transform -translate-y-1/2 hidden lg:flex flex-col items-center">
-              <Ruler className="text-accent-blue mb-2" size={20} />
-              <div className="h-32 w-0.5 bg-dark-600"></div>
-            </div>
-            
-            <div className="absolute -right-6 top-1/3 transform -translate-y-1/3 hidden lg:flex flex-col items-center">
-              <Compass className="text-accent-purple mb-2" size={20} />
-              <div className="h-24 w-0.5 bg-dark-600"></div>
-            </div>
+            <div className="absolute top-4 -left-4 bottom-4 -right-4 border-2 border-engineer-200 rounded-lg -z-10"></div>
+            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-accent-blue/10 rounded-full -z-10"></div>
           </div>
         </div>
         
         <div className="w-full lg:w-3/5">
           <div className="reveal">
-            <span className="inline-block mb-3 py-1 px-3 rounded-full bg-dark-700 text-accent-blue text-sm font-mono tracking-wider">
+            <span className="inline-block mb-3 py-1 px-3 rounded-full bg-engineer-100 text-engineer-700 text-sm font-medium">
               About Me
             </span>
-            <h2 className="mb-6 font-display">Pioneering <span className="text-gradient">Engineering</span> Excellence</h2>
-            <div className="space-y-4 text-dark-200 mb-8">
+            <h2 className="mb-6">Passionate About <span className="text-gradient">Engineering</span> Excellence</h2>
+            <div className="space-y-4 text-engineer-700 mb-8">
               <p>
-                I'm Nitya Rawat, an automotive and aeronautical engineer specializing in developing cutting-edge solutions that merge mechanical engineering with advanced technology for the transportation industry.
+                I'm Nitya Rawat, an automobile engineer with expertise in developing innovative solutions for the automotive industry. My passion lies at the intersection of mechanical engineering and cutting-edge technology.
               </p>
               <p>
-                With deep expertise in Computer-Aided Design (CAD), Finite Element Analysis (FEA), and Computational Fluid Dynamics (CFD), I create efficient, aerodynamic vehicle designs that push the boundaries of performance while maintaining sustainability.
+                With a background in Computer-Aided Design (CAD), Finite Element Analysis (FEA), and Computational Fluid Dynamics (CFD), I specialize in creating efficient, sustainable vehicle designs that push the boundaries of what's possible.
               </p>
               <p>
-                My passion for innovation drives me to explore new technologies in electric propulsion, autonomous systems, and aerospace applications, focusing on creating the next generation of transportation solutions.
+                My commitment to sustainability and innovation drives me to explore new approaches to automotive engineering, with a focus on electric and autonomous vehicle technology.
               </p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
               {achievements.map((item, index) => (
-                <div key={index} className="flex items-center space-x-3 p-4 bg-dark-700/50 rounded-lg border border-dark-600 card-hover">
+                <div key={index} className="flex items-center space-x-3 p-4 bg-engineer-50 rounded-lg border border-engineer-100">
                   {item.icon}
-                  <span className="text-sm font-medium text-dark-100">{item.text}</span>
+                  <span className="text-sm font-medium text-engineer-800">{item.text}</span>
                 </div>
               ))}
-            </div>
-            
-            {/* Tech specs */}
-            <div className="mt-8 p-4 bg-dark-700/30 rounded-lg border border-dark-600">
-              <div className="flex items-center mb-2">
-                <Cpu className="h-5 w-5 text-accent-blue mr-2" />
-                <h4 className="text-lg font-display">Technical Specifications</h4>
-              </div>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-y-2 gap-x-4 text-sm text-dark-200 font-mono">
-                <div>
-                  <span className="text-dark-400">Specialization:</span> Automotive Design
-                </div>
-                <div>
-                  <span className="text-dark-400">Experience:</span> 10+ Years
-                </div>
-                <div>
-                  <span className="text-dark-400">Location:</span> San Francisco, CA
-                </div>
-                <div>
-                  <span className="text-dark-400">Availability:</span> <span className="text-accent-green">Active</span>
-                </div>
-                <div>
-                  <span className="text-dark-400">Projects:</span> 25+
-                </div>
-                <div>
-                  <span className="text-dark-400">Patents:</span> 3
-                </div>
-              </div>
             </div>
           </div>
         </div>
