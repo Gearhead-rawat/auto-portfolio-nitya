@@ -59,14 +59,14 @@ const Skills = () => {
   ];
 
   const SkillItem = ({ title, icon: Icon, description, software }) => (
-    <div className="p-6 rounded-lg border border-dark-600 bg-dark-700/50 shadow-lg backdrop-blur-sm transition-all duration-300 card-hover">
+    <div className="p-6 rounded-lg border border-dark-600 bg-dark-700/50 shadow-lg backdrop-blur-sm transition-all duration-300 card-hover h-full">
       <div className="flex items-center mb-4">
         <div className="p-3 bg-dark-600 rounded-lg mr-4 text-accent-blue">
           <Icon className="h-6 w-6" />
         </div>
-        <h3 className="text-xl font-semibold font-display">{title}</h3>
+        <h3 className="text-xl font-semibold font-display truncate">{title}</h3>
       </div>
-      <p className="text-dark-200 mb-4">{description}</p>
+      <p className="text-dark-200 mb-4 line-clamp-3">{description}</p>
       
       <div className="mt-2">
         <div className="mb-2 text-sm font-mono text-accent-blue">
@@ -74,7 +74,7 @@ const Skills = () => {
         </div>
         <div className="flex flex-wrap gap-2">
           {software.map((item, idx) => (
-            <span key={idx} className="px-3 py-1 text-sm bg-dark-600 rounded-full text-white">
+            <span key={idx} className="px-3 py-1 text-sm bg-dark-600 rounded-full text-white truncate">
               {item}
             </span>
           ))}

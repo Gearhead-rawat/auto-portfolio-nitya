@@ -1,8 +1,16 @@
 
 import React from 'react';
 import Section from './Section';
+import { Mail, Phone, MapPin, Globe } from 'lucide-react';
 
 const About = () => {
+  const contactInfo = [
+    { icon: <Mail className="h-5 w-5" />, text: "nitya.rawat@example.com" },
+    { icon: <Phone className="h-5 w-5" />, text: "+1 (555) 123-4567" },
+    { icon: <MapPin className="h-5 w-5" />, text: "San Francisco, CA" },
+    { icon: <Globe className="h-5 w-5" />, text: "www.nityarawat.com" }
+  ];
+
   return (
     <Section id="about" variant="gradient">
       <div className="flex flex-col lg:flex-row items-center gap-12">
@@ -38,6 +46,21 @@ const About = () => {
               <p>
                 My passion for innovation drives me to explore new technologies in electric propulsion, autonomous systems, and vehicle applications, focusing on creating the next generation of transportation solutions.
               </p>
+            </div>
+            
+            {/* Contact Information */}
+            <div className="mt-8">
+              <h3 className="text-xl font-display mb-4">Contact Information</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {contactInfo.map((item, index) => (
+                  <div key={index} className="flex items-center space-x-3 group">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-lg neo-glass flex items-center justify-center text-accent-blue group-hover:text-accent-purple transition-colors">
+                      {item.icon}
+                    </div>
+                    <span className="text-dark-200">{item.text}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
